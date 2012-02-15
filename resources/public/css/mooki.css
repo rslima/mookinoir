@@ -1,0 +1,48 @@
+body {
+  background-color: #eeeeaa;
+}
+
+#cabecalho {
+  background-color: #667766;
+}
+
+h1 {
+  font-family: arial;
+  font-size: xx-large;
+  color: #ffffff;
+  padding-left: 3px;
+  padding-bottom: 0px;
+  line-height: 100%;
+}
+
+h2 {
+  font-family: arial;
+  font-size: large;
+}
+
+p.slogan {
+  padding-left: 3px;
+  font-style: italic;
+  font-size: small;
+  color: #cccccc;
+}
+
+#nav {
+  padding-left: 3px;
+  padding-top: 3px;
+}
+
+#nav li {
+  display: inline-block;
+  padding: 2px 5px 2px 5px;
+  text-align: center;
+  color: #dda;
+  width: 100px;
+  font-weight: bold;
+}
+
+#barralogin {
+  text-align: right;
+  padding-right: 5px;
+  background-color: #667766;
+}
