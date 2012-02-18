@@ -1,4 +1,4 @@
-(ns noirsite.models.menu)
+(ns noirsite.models.sitemap)
 (def principal 
   [ 
     { :menu :welcome :label "Bem-vindo" :link "/welcome" }

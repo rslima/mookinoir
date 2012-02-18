@@ -1,9 +1,9 @@
 (ns noirsite.views.common
-  (:require [noirsite.models.menu :as menu]
+  (:require [noirsite.models.sitemap :as menu]
             [noir.session :as session])
   (:use [noir.core :only [defpartial]]
         noirsite.views.login-form
-        [net.cgrand.enlive-html :only [at emit* unwrap]]
+        [net.cgrand.enlive-html :only [at emit* unwrap select]]
         [hiccup.page-helpers :only [include-css include-js html5]]))
 
 (defpartial layout [pagina-atual & content]

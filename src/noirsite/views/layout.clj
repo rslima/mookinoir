@@ -1,5 +1,5 @@
 (ns noirsite.views.layout
-  (:require [noirsite.models.menu :as menu]
+  (:require [noirsite.models.sitemap :as menu]
             [noir.session :as session]
             [net.cgrand.enlive-html :as html])
   (:use [noir.core :only [defpage]]))
@@ -44,5 +44,5 @@
      [:body :> :div.container]
      (html/substitute snippet)))
 
-(defpage "/layout" []
-  (layout :contas))
+(defn select-container-div [template]
+  (-> template html/html-resource (html/select [:div.container])))

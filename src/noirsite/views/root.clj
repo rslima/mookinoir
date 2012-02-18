@@ -1,8 +1,7 @@
 (ns noirsite.views.root
   (:require [noirsite.views.common :as common]
             [noir.session :as session]
-            [noir.response :as response]
-            [clojure.contrib.string :as str])
+            [noir.response :as response])
   (:use [noir.core :only [defpage]]))
 
 (defpage "/" []
