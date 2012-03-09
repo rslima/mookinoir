@@ -1,8 +1,6 @@
 (ns noirsite.views.contas
-  (:require [noirsite.views.common :as common])
-  (:use [noir.core :only [defpage]]))
+  (:use [noir.core :only [defpage]]
+        noirsite.views.layout))
 
-(defpage "/contas" []
-  (common/layout
-   :contas
-   [:h1 "Suas Informa&ccedil;&otilde;es"]))
+(defpage "/contas" {}
+  (layout :contas))

@@ -1,5 +1,5 @@
 (ns noirsite.views.layout
-  (:require [noirsite.models.sitemap :as menu]
+  (:require [noirsite.config.sitemap :as sitemap]
             [noir.session :as session]
             [net.cgrand.enlive-html :as html])
   (:use [noir.core :only [defpage]]))
@@ -16,7 +16,7 @@
              (html/content
               (str
                 "Mookirana - "
-                (:label (menu/encontra-menu pagina-atual)))))))
+                (:label (sitemap/encontra-menu pagina-atual)))))))
      (make-root [template]
        (html/transform template
          [:a.brand]
@@ -25,12 +25,12 @@
            identity)))
      (make-menu [template]
        (html/transform template
-         [:ul.nav :> :li]
-         (html/clone-for [item (filter menu/visivel menu/principal)]
+         [:ul#main-nav :> :li]
+         (html/clone-for [item (filter sitemap/visivel? sitemap/principal)]
            [:li]
            (if (= pagina-atual (:menu item))
              (html/add-class "active")
-             identity)              
+             identity)             
            [:a]
            (html/do->
             (html/set-attr :href (:link item))

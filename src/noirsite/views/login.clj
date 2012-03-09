@@ -1,8 +1,10 @@
 (ns noirsite.views.login
-  (:require [noirsite.views.common :as common])
-  (:use [noir.core :only [defpage]]))
+  (:use [noir.core :only [defpage]]
+        noirsite.views.layout))
 
-(defpage "/login" []
-  (common/layout
-   :login
-   [:h1 "Suas Informa&ccedil;&otilde;es"]))
+(defpage "/login" {}
+  (layout 
+    :login
+    (-> "noirsite/views/login.html"
+        select-container-div
+        replace-container-div)))

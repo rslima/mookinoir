@@ -1,8 +1,6 @@
 (ns noirsite.views.inicio
-  (:require [noirsite.views.common :as common])
-  (:use [noir.core :only [defpage]]))
+  (:use [noir.core :only [defpage]]
+        noirsite.views.layout))
 
-(defpage "/inicio" []
-  (common/layout
-   :inicio
-   [:h1 "Suas Informa&ccedil;&otilde;es"]))
+(defpage "/inicio" {}
+  (layout :inicio))

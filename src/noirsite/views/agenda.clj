@@ -1,8 +1,6 @@
 (ns noirsite.views.agenda
-  (:require [noirsite.views.common :as common])
-  (:use [noir.core :only [defpage]]))
+  (:use [noir.core :only [defpage]]
+        noirsite.views.layout))
 
-(defpage "/agenda" []
-  (common/layout
-   :agenda
-   [:h1 "Suas Informa&ccedil;&otilde;es"]))
+(defpage "/agenda" {}
+  (layout :agenda))

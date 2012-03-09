@@ -1,7 +1,6 @@
 (ns noirsite.views.welcome
   (:use [noir.core :only [defpage]]
-        noirsite.views.layout
-        [net.cgrand.enlive-html :only [defsnippet]]))
+        noirsite.views.layout))
 
-(defpage "/welcome" []
+(defpage "/welcome" {}
   (layout :welcome (-> "noirsite/views/welcome.html" select-container-div replace-container-div)))
