@@ -1,4 +1,4 @@
-(ns noirsite.models.crypto
+(ns mookinoir.models.crypto
   (:require [crypto.random :as c])
   (:use clj-message-digest.core)
   (:import org.apache.commons.codec.binary.Base64))

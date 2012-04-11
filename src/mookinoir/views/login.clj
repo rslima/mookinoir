@@ -1,16 +1,16 @@
-(ns noirsite.views.login
+(ns mookinoir.views.login
   (:require [noir.response :as resp]
             [noir.session :as session]
-            [noirsite.models.user :as user])
+            [mookinoir.models.user :as user])
   (:use [noir.core :only [defpage render]]
-        noirsite.views.layout))
+        mookinoir.views.layout))
 
 (defpage "/login" {}
   (if (session/get :user)
-    (resp/redirect "/inicio")
+    (resp/redirect "/home")
     (layout
       :login
-      (-> "noirsite/views/login.html"
+      (-> "mookinoir/views/login.html"
           select-container-div
           replace-container-div))))
 
@@ -24,10 +24,10 @@
       (if user
         (do
           (session/put! :user user)
-          (resp/redirect "/inicio"))
+          (resp/redirect "/home"))
         (render "/register" {})))))
 
-(defpage "/logout"
+(defpage logout "/logout"
   {}
   (session/remove! :user)
   (resp/redirect "/welcome"))

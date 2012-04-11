@@ -1,8 +1,8 @@
-(ns noirsite.models.user
+(ns mookinoir.models.user
   (:require [somnium.congomongo :as m])
   (:use clojure.set
-        noirsite.models.mongo
-        noirsite.models.crypto))
+        mookinoir.models.mongo
+        mookinoir.models.crypto))
 
 (defn- fetch-user-by-email-cmd [email]
   (when-let [user (m/fetch-one :users :where {:email email})]
